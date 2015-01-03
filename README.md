@@ -21,7 +21,7 @@ SwiftForm is a simple to use iOS library for creating forms. SwiftForm is writte
 
 ## Usage
 
-Create a view controller that derives from SwiftForm.  Add a UITableView view to the storyboard or nib.  Now that you have a swift form, create form groups and fields adding them to the datasource.  Here is an example:
+Create a view controller that derives from SwiftForm.  Add a UITableView view to the storyboard or nib.  Now that you have a SwiftForm, create form groups and fields adding them to the data source.  Here is an example:
 
 ```swift
 import UIKit
