@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="a8M-yJ-Y4S" customClass="TextFieldTableViewCell" customModule="SwiftForm" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8M-yJ-Y4S" id="Jy5-cD-NtW">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Placeholder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Buf-RJ-FiA">
+                        <rect key="frame" x="16" y="0.0" width="304" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="9z4-WA-Jzp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Buf-RJ-FiA" firstAttribute="leading" secondItem="Jy5-cD-NtW" secondAttribute="leadingMargin" constant="8" id="9JK-22-ciX"/>
+                    <constraint firstItem="Buf-RJ-FiA" firstAttribute="top" secondItem="Jy5-cD-NtW" secondAttribute="top" id="aZO-Qm-bxV"/>
+                    <constraint firstAttribute="trailing" secondItem="Buf-RJ-FiA" secondAttribute="trailing" id="sEy-6X-rb4"/>
+                    <constraint firstAttribute="centerY" secondItem="Buf-RJ-FiA" secondAttribute="centerY" constant="-0.25" id="y0e-7E-beA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="Buf-RJ-FiA" id="U6I-gt-0o7"/>
+            </connections>
+            <point key="canvasLocation" x="498" y="317"/>
+        </tableViewCell>
+    </objects>
+</document>
