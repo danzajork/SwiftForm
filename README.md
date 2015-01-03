@@ -76,7 +76,8 @@ Take a look at the example project for additional details and API uses.
 
 ## Contact
 
-Follow Dan Zajork on Twitter ([@danzajork](https://twitter.com/danzajork))
+- Send [Dan Zajork an email](http://dan.zajork.com/contact/)
+- Follow Dan Zajork on Twitter ([@danzajork](https://twitter.com/danzajork))
 
 ## Creator
 
