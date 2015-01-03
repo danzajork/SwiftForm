@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Swiftform by danzajork</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Swiftform</h1>
+          <h2>SwiftForm is a simple to use library for creating forms written in Swift.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/danzajork/SwiftForm/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/danzajork/SwiftForm/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/danzajork/SwiftForm" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="swiftform" class="anchor" href="#swiftform" aria-hidden="true"><span class="octicon octicon-link"></span></a>SwiftForm</h1>
+
+<p>SwiftForm is a simple to use iOS library for creating forms. SwiftForm is written in Swift.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>iOS 7.0+</li>
+<li>Xcode 6.1</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ol>
+<li>Download (you can also git clone, or add as a git submodule) SwiftForm to your project folder.</li>
+<li>Open the SwiftForm folder.  In Xcode, drag the SwiftForm.xcodeproj from Finder into the file navigator of your project.</li>
+<li>In Xcode, navigate to the target configuration window by selecting the project icon, and selecting the application target under the "Targets" heading in the sidebar.</li>
+<li>In the tab bar at the top of that window, open the "Build Phases" panel.</li>
+<li>Expand the "Link Binary with Libraries" group, and add SwiftForm.framework.</li>
+<li>To start using SwiftForm, import SwiftForm in your project file to access the API.</li>
+</ol>
+
+<hr>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Create a view controller that derives from SwiftForm.  Add a UITableView view to the storyboard or nib.  Now that you have a SwiftForm, create form groups and fields adding them to the data source.  Here is an example:</p>
+
+<div class="highlight highlight-swift"><pre><span class="pl-k">import</span> <span class="pl-s3">UIKit</span>
+<span class="pl-k">import</span> <span class="pl-s3">SwiftForm</span>
+
+<span class="pl-st">class</span> ViewController: SwiftForm {
+
+    <span class="pl-k">override</span> <span class="pl-st">func</span> <span class="pl-e">viewDidLoad</span>() {
+        <span class="pl-k">super</span><span class="pl-k">.</span>viewDidLoad()
+
+        <span class="pl-c">// Create form fields</span>
+        <span class="pl-st">let</span> textField <span class="pl-k">=</span> TextFormField(title: <span class="pl-s1">"Text field"</span>)
+        <span class="pl-st">let</span> booleanField <span class="pl-k">=</span> BooleanFormField(title <span class="pl-k">:</span> <span class="pl-s1">"Boolean field"</span>)
+        <span class="pl-st">let</span> dateField <span class="pl-k">=</span> DateFormField(title: <span class="pl-s1">"Date field"</span>)
+        <span class="pl-st">let</span> buttonField <span class="pl-k">=</span> ButtonFormField(title <span class="pl-k">:</span> <span class="pl-s1">"Button"</span>)
+
+        buttonField<span class="pl-k">.</span>setAction({
+
+            <span class="pl-st">var</span> message <span class="pl-k">=</span> <span class="pl-s1">"Text field: </span><span class="pl-s3">\(</span>textField<span class="pl-k">.</span>valueText(<span class="pl-s3">)</span><span class="pl-s1">)</span><span class="pl-cce">\n</span><span class="pl-s1">"</span>
+            message <span class="pl-k">+=</span> <span class="pl-s1">"Boolean field: </span><span class="pl-s3">\(</span>booleanField<span class="pl-k">.</span>valueText(<span class="pl-s3">)</span><span class="pl-s1">)</span><span class="pl-cce">\n</span><span class="pl-s1">"</span>
+            message <span class="pl-k">+=</span> <span class="pl-s1">"Date field: </span><span class="pl-s3">\(</span>dateField<span class="pl-k">.</span>valueText(<span class="pl-s3">)</span><span class="pl-s1">)"</span>
+
+            <span class="pl-st">var</span> alert <span class="pl-k">=</span> UIAlertView(title: <span class="pl-s1">"Message"</span>,
+                message: message,
+                delegate: <span class="pl-k">self</span>,
+                cancelButtonTitle: <span class="pl-s1">"OK"</span>)
+
+            alert<span class="pl-k">.</span>show()
+        })
+
+        <span class="pl-c">// Form fields are organized by groups which can have optional header and footer text</span>
+        <span class="pl-st">let</span> fieldGroup <span class="pl-k">=</span> FieldGroup()
+        fieldGroup<span class="pl-k">.</span>headerText <span class="pl-k">=</span> <span class="pl-s1">"Example Header"</span>
+        fieldGroup<span class="pl-k">.</span>fields<span class="pl-k">.</span>append(textField)
+        fieldGroup<span class="pl-k">.</span>fields<span class="pl-k">.</span>append(dateField)
+        fieldGroup<span class="pl-k">.</span>fields<span class="pl-k">.</span>append(booleanField)
+
+        <span class="pl-st">let</span> buttonGroup <span class="pl-k">=</span> FieldGroup()
+        buttonGroup<span class="pl-k">.</span>footerText <span class="pl-k">=</span> <span class="pl-s1">"Example footer text"</span>
+        buttonGroup<span class="pl-k">.</span>fields<span class="pl-k">.</span>append(buttonField)
+
+        <span class="pl-c">// Add groups to the data source to create the form</span>
+        dataSource<span class="pl-k">.</span>groups<span class="pl-k">.</span>append(fieldGroup)
+        dataSource<span class="pl-k">.</span>groups<span class="pl-k">.</span>append(buttonGroup)
+    }
+}</pre></div>
+
+<p>Take a look at the example project for additional details and API uses.</p>
+
+<hr>
+
+<h2>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contact</h2>
+
+<p>Follow Dan Zajork on Twitter (<a href="https://twitter.com/danzajork">@danzajork</a>)</p>
+
+<h2>
+<a id="creator" class="anchor" href="#creator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creator</h2>
+
+<ul>
+<li>
+<a href="http://github.com/danzajork">Daniel Zajork</a> (<a href="https://twitter.com/danzajork">@danzajork</a>)</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>SwiftForm is released under the MIT license. See LICENSE for details.</p>
+        </section>
+
+        <footer>
+          Swiftform is maintained by <a href="https://github.com/danzajork">danzajork</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
