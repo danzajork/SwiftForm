@@ -3,6 +3,8 @@ SwiftForm
 
 SwiftForm is a simple to use iOS library for creating forms. SwiftForm is written in Swift.
 
+![SwiftForm Screenshot](https://raw.githubusercontent.com/danzajork/SwiftForm/assets/assets/screenshot.png "SwiftForm example screenshot")
+
 ## Requirements
 
 - iOS 7.0+
