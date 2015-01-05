@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>82D31898-F27F-4816-A303-964545714BDF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SwiftForm</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>97348F73A1608C8D55E388472A18D66A3CD8170D</key>
+		<string>https://github.com/danzajork/SwiftForm.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SwiftForm.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>97348F73A1608C8D55E388472A18D66A3CD8170D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/danzajork/SwiftForm.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>97348F73A1608C8D55E388472A18D66A3CD8170D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>97348F73A1608C8D55E388472A18D66A3CD8170D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftForm</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -23,7 +23,7 @@ class ViewController: SwiftForm {
 
         passwordTextField.isSecure = true
         dateField.value = NSDate().dateByAddingTimeInterval(86400 * -100) // forms can be created with existing or default values
-        dateField.dateStyle = .LongStyle // updating the data and time styles will change the date picker mode
+        dateField.dateStyle = .LongStyle // updating the date and time styles will change the underlying date picker mode
         dateField.timeStyle = .NoStyle
         buttonField.setAction({
             
@@ -32,7 +32,7 @@ class ViewController: SwiftForm {
             message += "Boolean field: \(booleanField.valueText())\n"
             message += "Date field: \(dateField.valueText())"
             
-            var alert = UIAlertView(title: "Message",
+            let alert = UIAlertView(title: "Message",
                 message: message,
                 delegate: self,
                 cancelButtonTitle: "OK")

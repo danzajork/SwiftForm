@@ -46,6 +46,6 @@ extension LabelFieldTableViewCell : FormFieldTableViewCell {
     
     public func setValueChangedAction(valueChangedAction: (formField : BaseFormField) -> Void) {
         
-        self.valueChangedAction = valueChangedAction;
+        self.valueChangedAction = valueChangedAction
     }
 }
